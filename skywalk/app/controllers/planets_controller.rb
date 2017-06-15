@@ -3,12 +3,12 @@ class PlanetsController < ApplicationController
     planets = Planet.all
     render :json => planets.as_json(
       {
-        only: :name,
+        only: [:name, :typeofplanet, :size, :distancefromsun, :lengthofyear, :description],
         include:
         {
           moons:
           {
-            only: :name
+            only: [:name, :size, :orbit, :description]
           }
         }
       }
