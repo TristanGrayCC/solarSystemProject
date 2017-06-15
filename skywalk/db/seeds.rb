@@ -10,14 +10,15 @@ Moon.delete_all
 Planet.delete_all
 OtherPlanetaryObject.delete_all
 
-Planet.create({name: 'Mercury', typeofplanet: 'Terrestrial', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
-Planet.create({name: 'Venus', typeofplanet: 'Terrestrial', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
+Planet.create({name: 'Sol', typeofplanet: 'Sun', size: 1400000, distancefromsun: 0, lengthofyear: 24.47, description: ''})
+Planet.create({name: 'Mercury', typeofplanet: 'Terrestrial', size: 6371, distancefromsun: 0.4, lengthofyear: 365.25, description: ''})
+Planet.create({name: 'Venus', typeofplanet: 'Terrestrial', size: 6371, distancefromsun: 0.7, lengthofyear: 365.25, description: ''})
 p3 = Planet.create({name: 'Earth', typeofplanet: 'Terrestrial', size: 12742, distancefromsun: 1, lengthofyear: 365.25, description: 'Earth is the third planet from the sun and the fifth largest in the solar system. Just slightly larger than nearby Venus, Earth is the biggest of the terrestrial planets. Our home planet is the only planet in our solar system known to harbor living things.'})
-p4 = Planet.create({name: 'Mars', typeofplanet: 'Terrestrial', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
-p5 = Planet.create({name: 'Jupiter', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
-p6 = Planet.create({name: 'Saturn', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
-p7 = Planet.create({name: 'Neptune', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
-p8 = Planet.create({name: 'Uranus', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 1, lengthofyear: 365.25, description: ''})
+p4 = Planet.create({name: 'Mars', typeofplanet: 'Terrestrial', size: 6371, distancefromsun: 1.5, lengthofyear: 365.25, description: ''})
+p5 = Planet.create({name: 'Jupiter', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 5.2, lengthofyear: 365.25, description: ''})
+p6 = Planet.create({name: 'Saturn', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 9.5, lengthofyear: 365.25, description: ''})
+p7 = Planet.create({name: 'Neptune', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 19.2, lengthofyear: 365.25, description: ''})
+p8 = Planet.create({name: 'Uranus', typeofplanet: 'Gas Giant', size: 6371, distancefromsun: 30.1, lengthofyear: 365.25, description: ''})
 
 s1 = SolarRegion.create({name: 'Kuiper Belt', size: 6371, distancefromsun: 20, description: ''})
 OtherPlanetaryObject.create({name: 'Pluto', typeofobject: 'Dwarf Planet', size: 2380, distancefromsun: 39.48, description: '', solar_region_id: s1.id})
