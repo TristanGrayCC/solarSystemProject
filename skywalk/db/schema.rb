@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615140825) do
+ActiveRecord::Schema.define(version: 20170615151343) do
 
   create_table "moons", force: :cascade do |t|
     t.text     "name"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20170615140825) do
 
   add_index "moons", ["planet_id"], name: "index_moons_on_planet_id"
 
+  create_table "other_planetary_objects", force: :cascade do |t|
+    t.text     "name"
+    t.text     "typeofobject"
+    t.integer  "size"
+    t.integer  "distancefromsun"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "solar_region_id"
+  end
+
+  add_index "other_planetary_objects", ["solar_region_id"], name: "index_other_planetary_objects_on_solar_region_id"
+
   create_table "planets", force: :cascade do |t|
     t.text     "name"
     t.text     "typeofplanet"
@@ -34,6 +47,15 @@ ActiveRecord::Schema.define(version: 20170615140825) do
     t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "solar_regions", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "size"
+    t.integer  "distancefromsun"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "description"
   end
 
 end

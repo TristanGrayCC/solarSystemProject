@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  typeofobject: MyText
+  size: 1
+  distancefromsun: 1
+  description: MyText
+
+two:
+  name: MyText
+  typeofobject: MyText
+  size: 1
+  distancefromsun: 1
+  description: MyText
