@@ -1,0 +1,14 @@
+Planet:
+- Name
+- Type
+- Size
+- Distance From Sun
+- Length of Year
+- Description
+
+Moon:
+- Name
+- Planet
+- Size
+- Orbit
+- Description

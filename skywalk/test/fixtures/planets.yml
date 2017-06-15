@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  type: MyText
+  size: 1
+  distancefromsun: 1
+  lengthofyear: 1
+  description: MyText
+
+two:
+  name: MyText
+  type: MyText
+  size: 1
+  distancefromsun: 1
+  lengthofyear: 1
+  description: MyText
