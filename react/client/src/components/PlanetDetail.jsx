@@ -9,15 +9,22 @@ class PlanetDetail extends React.Component {
   }
 
   render(){
+    const indvPlanets = this.state.planets.map((planet, index) => {
+      return (
+        <div key = {index}>
+          <h3>{planet.name}</h3>
+          <p>Type of Planet: {planet.typeofplanet}</p>
+          <p>Size (km): {planet.size}</p>
+          <p>Distance From Sun (AU): {planet.distancefromsun}</p>
+          <p>Length of Year (Earth Days): {planet.lengthofyear}</p>
+          <p>Description: {planet.description}</p>
+          <p>Image: {planet.image}</p>
+        </div>
+      );
+    });
     return (
       <div>
-        <h3>{this.state.planets.name}</h3>
-        <p>Type of Planet: {this.state.planets.typeofplanet}</p>
-        <p>Size (km): {this.state.planets.size}</p>
-        <p>Distance From Sun (AU): {this.state.planets.distancefromsun}</p>
-        <p>Length of Year (Earth Days): {this.state.planets.distancefromsun}</p>
-        <p>Description: {this.state.planets.description}</p>
-        <p>Image: {this.state.planets.image}</p>
+        {indvPlanets}
       </div>
     );
   }
@@ -34,7 +41,7 @@ class PlanetDetail extends React.Component {
       const data = JSON.parse(jsonString);
       console.log(data);
       this.setState({
-        planets: data[0]
+        planets: data
       });
     });
     request.send();
