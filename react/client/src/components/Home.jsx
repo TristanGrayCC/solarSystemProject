@@ -1,6 +1,6 @@
 import React from 'react'
-import PlanetDetail from './PlanetDetail'
 import { Link } from 'react-router'
+import PlanetDetail from './PlanetDetail'
 
 const Home = () => (
   <div className="home">
