@@ -31,6 +31,15 @@ body {
   height: 125px;
 }
 
+.Sol .planet {
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  border-radius: 250px;
+  margin: 0 auto;
+  animation: spinsun 40s infinite linear;
+}
+
 .planet {
   background-size: cover;
   background-repeat: no-repeat;
@@ -112,6 +121,54 @@ body {
   animation: anti-spin 50s infinite linear;
 }
 .Jupiter .shadow {
+  animation: shadow 50s infinite linear;
+}
+
+.Saturn {
+  position: absolute;
+  width: 1100px;
+  z-index:6;
+  animation: orbitjupiter 50s infinite linear;
+  top: -64px;
+}
+.Saturn .planet {
+  width:128px;
+  height:128px;
+  animation: anti-spin 50s infinite linear;
+}
+.Saturn .shadow {
+  animation: shadow 50s infinite linear;
+}
+
+.Neptune {
+  position: absolute;
+  width: 1100px;
+  z-index:6;
+  animation: orbitjupiter 50s infinite linear;
+  top: -64px;
+}
+.Neptune .planet {
+  width:128px;
+  height:128px;
+  animation: anti-spin 50s infinite linear;
+}
+.Neptune .shadow {
+  animation: shadow 50s infinite linear;
+}
+
+.Uranus {
+  position: absolute;
+  width: 1100px;
+  z-index:6;
+  animation: orbitjupiter 50s infinite linear;
+  top: -64px;
+}
+.Uranus .planet {
+  width:128px;
+  height:128px;
+  animation: anti-spin 50s infinite linear;
+}
+.Uranus .shadow {
   animation: shadow 50s infinite linear;
 }
 
