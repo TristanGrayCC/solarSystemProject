@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
-import PlanetDetail from './PlanetDetail'
+import Planet from './Planet'
 
 const Home = () => (
   <div className="home">
     <h1 className='title'>The Solar System</h1>
-    <PlanetDetail/>
+    <Planet/>
   </div>
 )
 
