@@ -18,7 +18,7 @@ class PlanetDetail extends React.Component {
           <p>Distance From Sun (AU): {planet.distancefromsun}</p>
           <p>Length of Year (Earth Days): {planet.lengthofyear}</p>
           <p>Description: {planet.description}</p>
-          <p>Image: {planet.image}</p>
+          <img src = {planet.image}></img>
         </div>
       );
     });
