@@ -3,25 +3,42 @@ import { Link } from 'react-router'
 import Planet from './Planet'
 import Menu from './Menu'
 import PlanetDetails from './PlanetDetails'
+import ApiRequestHelper from '../helpers/apiRequestHelper'
 
 class Home extends React.Component{
   constructor(){
     super();
+    this.state = {
+      planetDetail: null
+    }
+    this.apiRequestHelper = new ApiRequestHelper();
     this.showPlanetDetail = this.showPlanetDetail.bind(this);
   }
   render(){
+    let planetDetails = <p></p>
+    if (this.state.planetDetail !== null) {
+      planetDetails = <PlanetDetails planet = {this.state.planetDetail}/>
+    }
+    console.log(this.state.planetDetail)
     return(
       <div className="home">
         <h1 className='title'>The Solar System</h1>
-        <Planet/>
         <Menu showDetail = {this.showPlanetDetail}/>
+        <Planet/>
+        {planetDetails}
       </div>
     )
   }
 
   showPlanetDetail(event){
-    console.log(event.target.innerText)
-    return <PlanetDetails planet = {event.target.innerText}/>
+    const planet = (event.target.innerText)
+    this.apiRequestHelper.getAll((planets) => {
+      planets.forEach((planetinarray) => {
+        if (planetinarray.name === planet) {
+          this.setState({planetDetail: planetinarray})
+        }
+      })
+    })
   }
 }
 

@@ -39,7 +39,6 @@ class PlanetDetail extends React.Component {
       if (request.status !== 200) return;
       const jsonString = request.responseText;
       const data = JSON.parse(jsonString);
-      console.log(data);
       this.setState({
         planets: data
       });

@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiRequestHelper from '../helpers/apiRequestHelper'
 
 class PlanetName extends React.Component {
   constructor(props){
@@ -6,6 +7,7 @@ class PlanetName extends React.Component {
     this.state = {
       planets: []
     };
+    this.apiRequestHelper = new ApiRequestHelper();
   }
 
   render(){
@@ -24,21 +26,9 @@ class PlanetName extends React.Component {
   }
 
   componentDidMount(){
-    const url = 'http://localhost:5000/api/planets';
-    const request = new XMLHttpRequest();
-    request.open('GET', url);
-
-    request.addEventListener('load', () => {
-      console.log("Making request")
-      if (request.status !== 200) return;
-      const jsonString = request.responseText;
-      const data = JSON.parse(jsonString);
-      console.log(data);
-      this.setState({
-        planets: data
-      });
-    });
-    request.send();
+    this.apiRequestHelper.getAll((allPlanets) => {
+      this.setState({planets: allPlanets})
+    })
   }
 }
 
