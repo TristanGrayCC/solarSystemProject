@@ -1,5 +1,4 @@
 import React from 'react';
-import PlanetDetails from './PlanetDetails'
 
 class PlanetName extends React.Component {
   constructor(props){
@@ -7,14 +6,13 @@ class PlanetName extends React.Component {
     this.state = {
       planets: []
     };
-    this.showPlanetDetail = this.showPlanetDetail.bind(this);
   }
 
   render(){
     const indvPlanets = this.state.planets.map((planet, index) => {
       return (
         <div key = {index}>
-          <button className = "planet-button" onClick = {this.showPlanetDetail}>{planet.name}</button>
+          <button className = "planet-button" onClick = {this.props.showDetail}>{planet.name}</button>
         </div>
       );
     });
@@ -41,11 +39,6 @@ class PlanetName extends React.Component {
       });
     });
     request.send();
-  }
-
-  showPlanetDetail(event){
-    console.log(event.target.innerText)
-    return <PlanetDetails/>
   }
 }
 
