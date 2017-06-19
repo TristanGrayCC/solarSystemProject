@@ -30,6 +30,7 @@ class PlanetDetail extends React.Component {
     });
     return (
       <div>
+        <a href="http://localhost:3000/#/">Home</a>
         {indvPlanets}
       </div>
     );

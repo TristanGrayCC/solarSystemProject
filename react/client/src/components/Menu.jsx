@@ -9,6 +9,7 @@ class Menu extends React.Component{
     return (
       <div className="detail">
         <h2 className='title'>Menu</h2>
+        <a href="http://localhost:3000/#/detail">All Planets</a>
         <PlanetName showDetail = {this.props.showDetail}/>
       </div>
     )
