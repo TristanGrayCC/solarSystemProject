@@ -7,6 +7,18 @@ body {
   color: white;
 }
 
+.planet-button{
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .wrapper{
   position:fixed;
   margin: 0 auto;
@@ -27,18 +39,18 @@ body {
 
 .Sol {
   z-index: 1;
-  height: 125px;
+  height: 398px;
   top: 50%;
-  left: 50%;
+  left: 52%;
   margin-top: -100px;
   margin-left: -500px;
 }
 
 .Sol .planet {
-  width: 695px;
-  height: 100px;
+  width: 398px;
+  height: 398px;
   background-size: cover;
-  border-radius: 250px;
+  border-radius: 398px;
   margin: 0 auto;
   animation: sunglow 5s infinite linear;
 }
@@ -61,15 +73,15 @@ body {
   position: fixed;
   z-index:3;
   animation: orbitmercury 3s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 
 .Mercury .planet {
-  width:2.4px;
-  height:2.5px;
+  width:1.2px;
+  height:1.2px;
 }
 .Mercury .shadow {
   animation: shadow 3s infinite linear;
@@ -79,14 +91,14 @@ body {
   position: fixed;
   z-index:4;
   animation: orbitvenus 4.7s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 .Venus .planet {
-  width:6.1px;
-  height:6.1px;
+  width:3px;
+  height:3px;
 }
 .Venus .shadow {
   animation: shadow 4.7s infinite linear;
@@ -95,14 +107,14 @@ body {
   position: fixed;
   z-index:5;
   animation: orbitearth 6s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 .Earth .planet {
-  width:6.4px;
-  height:6.4px;
+  width:3.2px;
+  height:3.2px;
 }
 .Earth .shadow {
   animation: shadow 6s infinite linear;
@@ -111,14 +123,14 @@ body {
   position: fixed;
   z-index:6;
   animation: orbitmars 8.3s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 .Mars .planet {
-  width:3.4px;
-  height:3.4px;
+  width:2.7px;
+  height:2.7px;
 }
 .Mars .shadow {
   animation: shadow 8.3s infinite linear;
@@ -133,8 +145,8 @@ body {
   margin-left: -650px;
 }
 .Jupiter .planet {
-  width:71.5px;
-  height:71.5px;
+  width:35.7px;
+  height:35.7px;
 }
 .Jupiter .shadow {
   animation: shadow 20.8s infinite linear;
@@ -144,14 +156,14 @@ body {
   position: fixed;
   z-index:8;
   animation: orbitsaturn 32.8s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 .Saturn .planet {
-  width:60px;
-  height:60px;
+  width:30px;
+  height:30px;
 }
 .Saturn .shadow {
   animation: shadow 32.8s infinite linear;
@@ -161,14 +173,14 @@ body {
   position: fixed;
   z-index:9;
   animation: orbitneptune 77.6s infinite linear;
-  top: 60%;
-  left: 53%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 .Neptune .planet {
-  width:24.8px;
-  height:24.8px;
+  width:12.4px;
+  height:12.4px;
 }
 .Neptune .shadow {
   animation: shadow 77.6s infinite linear;
@@ -178,14 +190,14 @@ body {
   position: fixed;
   z-index:10;
   animation: orbituranus 55.4s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
+  top: 75%;
+  left: 58%;
+  margin-top: -300px;
   margin-left: -650px;
 }
 .Uranus .planet {
-  width:25.6px;
-  height:25.6px;
+  width:12.8px;
+  height:12.8px;
 }
 .Uranus .shadow {
   animation: shadow 55.4s infinite linear;
@@ -222,60 +234,60 @@ body {
   100%{ background-position: -50% 0%; }
 }
 @keyframes orbitmercury {
-  0% { z-index:2; transform: rotate(0deg) translate(-60px) rotate(0deg); }
-  49% { z-index:2; }
-  50% { z-index:-2; }
-  99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-60px) rotate(-360deg); }
-}
-@keyframes orbitvenus {
-  0% { z-index:2; transform: rotate(0deg) translate(-72px) rotate(0deg); }
-  49% { z-index:2; }
-  50% { z-index:-2; }
-  99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-72px) rotate(-360deg); }
-}
-@keyframes orbitearth {
   0% { z-index:2; transform: rotate(0deg) translate(-80px) rotate(0deg); }
   49% { z-index:2; }
   50% { z-index:-2; }
   99% { z-index:-2; }
   100%   { z-index:2; transform: rotate(360deg) translate(-80px) rotate(-360deg); }
 }
-@keyframes orbitmars {
-  0% { z-index:2; transform: rotate(0deg) translate(-91px) rotate(0deg); }
+@keyframes orbitvenus {
+  0% { z-index:2; transform: rotate(0deg) translate(-92px) rotate(0deg); }
   49% { z-index:2; }
   50% { z-index:-2; }
   99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-91px) rotate(-360deg); }
+  100%   { z-index:2; transform: rotate(360deg) translate(-92px) rotate(-360deg); }
+}
+@keyframes orbitearth {
+  0% { z-index:2; transform: rotate(0deg) translate(-100px) rotate(0deg); }
+  49% { z-index:2; }
+  50% { z-index:-2; }
+  99% { z-index:-2; }
+  100%   { z-index:2; transform: rotate(360deg) translate(-100px) rotate(-360deg); }
+}
+@keyframes orbitmars {
+  0% { z-index:2; transform: rotate(0deg) translate(-111px) rotate(0deg); }
+  49% { z-index:2; }
+  50% { z-index:-2; }
+  99% { z-index:-2; }
+  100%   { z-index:2; transform: rotate(360deg) translate(-111px) rotate(-360deg); }
 }
 @keyframes orbitjupiter {
-  0% { z-index:2; transform: rotate(0deg) translate(-144px) rotate(0deg); }
+  0% { z-index:2; transform: rotate(0deg) translate(-164px) rotate(0deg); }
   49% { z-index:2; }
   50% { z-index:-2; }
   99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-144px) rotate(-360deg); }
+  100%   { z-index:2; transform: rotate(360deg) translate(-164px) rotate(-360deg); }
 }
 @keyframes orbitsaturn {
-  0% { z-index:2; transform: rotate(0deg) translate(-184px) rotate(0deg); }
+  0% { z-index:2; transform: rotate(0deg) translate(-204px) rotate(0deg); }
   49% { z-index:2; }
   50% { z-index:-2; }
   99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-184px) rotate(-360deg); }
+  100%   { z-index:2; transform: rotate(360deg) translate(-204px) rotate(-360deg); }
 }
 
 @keyframes orbitneptune {
-  0% { z-index:2; transform: rotate(0deg) translate(-304px) rotate(0deg); }
+  0% { z-index:2; transform: rotate(0deg) translate(-324px) rotate(0deg); }
   49% { z-index:2; }
   50% { z-index:-2; }
   99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-304px) rotate(-360deg); }
+  100%   { z-index:2; transform: rotate(360deg) translate(-324px) rotate(-360deg); }
 }
 
 @keyframes orbituranus {
-  0% { z-index:2; transform: rotate(0deg) translate(-249px) rotate(0deg); }
+  0% { z-index:2; transform: rotate(0deg) translate(-269px) rotate(0deg); }
   49% { z-index:2; }
   50% { z-index:-2; }
   99% { z-index:-2; }
-  100%   { z-index:2; transform: rotate(360deg) translate(-249px) rotate(-360deg); }
+  100%   { z-index:2; transform: rotate(360deg) translate(-269px) rotate(-360deg); }
 }
