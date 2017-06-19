@@ -13,11 +13,12 @@ class Home extends React.Component{
     }
     this.apiRequestHelper = new ApiRequestHelper();
     this.showPlanetDetail = this.showPlanetDetail.bind(this);
+    this.hidePlanetDetail = this.hidePlanetDetail.bind(this);
   }
   render(){
     let planetDetails = <p></p>
     if (this.state.planetDetail !== null) {
-      planetDetails = <PlanetDetails planet = {this.state.planetDetail}/>
+      planetDetails = <PlanetDetails planet = {this.state.planetDetail} hideDetail = {this.hidePlanetDetail}/>
     }
     console.log(this.state.planetDetail)
     return(
@@ -39,6 +40,10 @@ class Home extends React.Component{
         }
       })
     })
+  }
+
+  hidePlanetDetail(){
+    this.setState({planetDetail: null})
   }
 }
 
