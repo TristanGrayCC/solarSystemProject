@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiRequestHelper from '../helpers/apiRequestHelper'
 
 class PlanetDetail extends React.Component {
   constructor(props){
@@ -6,19 +7,24 @@ class PlanetDetail extends React.Component {
     this.state = {
       planets: []
     };
+    this.apiRequestHelper = new ApiRequestHelper();
   }
 
   render(){
     const indvPlanets = this.state.planets.map((planet, index) => {
       return (
         <div key = {index}>
-          <h3>{planet.name}</h3>
-          <p>Type of Planet: {planet.typeofplanet}</p>
-          <p>Size (km): {planet.size}</p>
-          <p>Distance From Sun (AU): {planet.distancefromsun}</p>
-          <p>Length of Year (Earth Days): {planet.lengthofyear}</p>
-          <p>Description: {planet.description}</p>
-          <img src = {planet.image}></img>
+          <div className = 'planet-image'>
+            <img className = 'planet-detail-image' src = {planet.image}></img>
+          </div>
+          <div className = 'planet-text'>
+            <h3>{planet.name}</h3>
+            <p>Type of Planet: {planet.typeofplanet}</p>
+            <p>Size (km): {planet.size}</p>
+            <p>Distance From Sun (AU): {planet.distancefromsun}</p>
+            <p>Length of Year (Earth Days): {planet.lengthofyear}</p>
+            <p>Description: {planet.description}</p>
+          </div>
         </div>
       );
     });
@@ -30,20 +36,9 @@ class PlanetDetail extends React.Component {
   }
 
   componentDidMount(){
-    const url = 'http://localhost:5000/api/planets';
-    const request = new XMLHttpRequest();
-    request.open('GET', url);
-
-    request.addEventListener('load', () => {
-      console.log("Making request")
-      if (request.status !== 200) return;
-      const jsonString = request.responseText;
-      const data = JSON.parse(jsonString);
-      this.setState({
-        planets: data
-      });
-    });
-    request.send();
+    this.apiRequestHelper.getAll((planetsresults) => {
+      this.setState({planets: planetsresults})
+    })
   }
 }
 
