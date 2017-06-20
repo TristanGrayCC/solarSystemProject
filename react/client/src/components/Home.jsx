@@ -11,7 +11,8 @@ class Home extends React.Component{
     super();
     this.state = {
       planetDetail: null,
-      showInformation: null
+      showInformation: null,
+      selectedPlanet: null
     }
     this.apiRequestHelper = new ApiRequestHelper();
     this.showPlanetDetail = this.showPlanetDetail.bind(this);
@@ -27,12 +28,11 @@ class Home extends React.Component{
     if (this.state.showInformation !== null) {
       information = <InformationTab/>
     }
-    console.log(this.state.planetDetail)
     return(
       <div className="home">
         <h1 className='title'>The Solar System</h1>
         <Menu showDetail = {this.showPlanetDetail} showInfo = {this.showInfo}/>
-        <Planet/>
+        <Planet selectedPlanet = {this.state.selectedPlanet} showDetail = {this.showPlanetDetail}/>
         {planetDetails}
         {information}
       </div>
@@ -40,7 +40,8 @@ class Home extends React.Component{
   }
 
   showPlanetDetail(event){
-    const planet = (event.target.innerText)
+    const planet = (event.target.id)
+    this.setState({selectedPlanet: planet})
     this.apiRequestHelper.getAll((planets) => {
       planets.forEach((planetinarray) => {
         if (planetinarray.name === planet) {
@@ -52,6 +53,7 @@ class Home extends React.Component{
 
   hidePlanetDetail(){
     this.setState({planetDetail: null})
+    this.setState({selectedPlanet: null})
   }
 
   showInfo(){

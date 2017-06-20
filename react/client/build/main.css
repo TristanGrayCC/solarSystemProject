@@ -10,6 +10,8 @@ body {
 
 .information-tab {
   color: white;
+  position: fixed;
+  margin-top: 500px;
 }
 
 .planet-detail {

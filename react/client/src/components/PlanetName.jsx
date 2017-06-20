@@ -14,7 +14,7 @@ class PlanetName extends React.Component {
     const indvPlanets = this.state.planets.map((planet, index) => {
       return (
         <div key = {index}>
-          <button className = "planet-button" onClick = {this.props.showDetail}>{planet.name}</button>
+          <button className = "planet-button" onClick = {this.props.showDetail} id = {planet.name}>{planet.name}</button>
         </div>
       );
     });

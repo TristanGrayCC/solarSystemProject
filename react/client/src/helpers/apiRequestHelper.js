@@ -6,7 +6,6 @@ class ApiRequestHelper{
     request.open('GET', url);
 
     request.addEventListener('load', () => {
-      console.log("Making request")
       if (request.status !== 200) return;
       const jsonString = request.responseText;
       const data = JSON.parse(jsonString);
