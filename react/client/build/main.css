@@ -1,3 +1,14 @@
+h1 {
+  position: fixed;
+  left: 35%;
+}
+
+.pause {
+  position: fixed;
+  margin-top: 60px;
+  left: 43%;
+}
+
 body {
   background-color: black;
   color: white;
@@ -5,22 +16,45 @@ body {
 }
 
 .detail {
+  position: fixed;
+  margin-top: 100px;
+  margin-left: 10px;
+}
+
+.detail {
   z-index: 99;
   position: absolute;
+}
+
+.planet-dropdown-hide {
+  display: none;
+}
+
+.object-dropdown-hide {
+  display: none;
+}
+
+.planet-dropdown-show {
+  display: inherit;
+}
+
+.object-dropdown-show {
+  display: inherit;
 }
 
 .information-tab {
   color: white;
   position: fixed;
-  margin-top: 500px;
-  padding: 10px;
+  margin-top: 600px;
+  margin-left: 150px;
+  width: 900px;
 }
 
 .link {
   color: white;
   font-style: normal;
-  padding: 10px;
   text-decoration: none;
+  margin: 10px;
 }
 
 .planet-detail {
@@ -30,6 +64,7 @@ body {
   float: right;
   height: 500px;
   width: 400px;
+  z-index: 1;
 }
 
 .planet-image {
@@ -74,12 +109,11 @@ body {
   position:fixed;
   margin: 0 auto;
   display:block;
-  margin-top: 200px;
+  margin-top: 150px;
   perspective: 1000px;
-  height: 200px;
+  height: 500px;
   width: 1000px;
 	perspective-origin: 60% 50%;
-  transform: rotate(-10deg);
   z-index: 10
 }
 
@@ -89,22 +123,60 @@ body {
   transform-style: preserve-3d;
 }
 
+.Planet {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+div .paused {
+  animation-play-state: paused;
+}
+
+div .running {
+  animation-play-state: running;
+}
+
+.sun-selected {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+.belt-selected {
+  width:325px;
+  height:325px;
+  background-size: 100% 100%;
+  filter:brightness(100%);
+}
+
+.kbelt-selected {
+  width:1000px;
+  height:600px;
+  background-size: 100% 100%;
+  filter:brightness(50%);
+}
+
+.planet-selected {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 100px;
+  filter: brightness(200%);
+}
+
 .Sun {
-  z-index: 1;
+  z-index: 2;
   height: 398px;
-  top: 50%;
+  top: 22%;
   left: 52%;
-  margin-top: -100px;
-  margin-left: -500px;
 }
 
 .Sun .planet {
   width: 100px;
   height: 100px;
-  background-size: cover;
   border-radius: 398px;
   margin: 0 auto;
-  animation: sunglow 5s infinite linear;
 }
 
 .planet {
@@ -125,10 +197,8 @@ body {
   position: fixed;
   z-index:3;
   animation: orbitmercury 3s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 
 .Mercury .planet {
@@ -143,10 +213,8 @@ body {
   position: fixed;
   z-index:4;
   animation: orbitvenus 4.7s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Venus .planet {
   width:3px;
@@ -159,10 +227,8 @@ body {
   position: fixed;
   z-index:5;
   animation: orbitearth 6s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Earth .planet {
   width:3.2px;
@@ -171,14 +237,28 @@ body {
 .Earth .shadow {
   animation: shadow 6s infinite linear;
 }
+
+.Moon {
+  position: fixed;
+  z-index:5;
+  animation: orbitearth 6s infinite linear;
+  top: 33%;
+  left: 56.75%;
+}
+.Moon .planet {
+  width:1px;
+  height:1px;
+}
+.Moon .shadow {
+  animation: shadow 6s infinite linear;
+}
+
 .Mars {
   position: fixed;
   z-index:6;
   animation: orbitmars 8.3s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Mars .planet {
   width:2.7px;
@@ -191,10 +271,8 @@ body {
   position: fixed;
   z-index:7;
   animation: orbitjupiter 20.8s infinite linear;
-  top: 60%;
-  left: 54.5%;
-  margin-top: -250px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Jupiter .planet {
   width:35.7px;
@@ -208,14 +286,13 @@ body {
   position: fixed;
   z-index:8;
   animation: orbitsaturn 32.8s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Saturn .planet {
-  width:30px;
+  width:50px;
   height:30px;
+  background-size: contain;
 }
 .Saturn .shadow {
   animation: shadow 32.8s infinite linear;
@@ -225,10 +302,8 @@ body {
   position: fixed;
   z-index:9;
   animation: orbitneptune 77.6s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Neptune .planet {
   width:12.4px;
@@ -242,10 +317,8 @@ body {
   position: fixed;
   z-index:10;
   animation: orbituranus 55.4s infinite linear;
-  top: 75%;
-  left: 58%;
-  margin-top: -300px;
-  margin-left: -650px;
+  top: 33%;
+  left: 57%;
 }
 .Uranus .planet {
   width:12.8px;
@@ -255,29 +328,68 @@ body {
   animation: shadow 55.4s infinite linear;
 }
 
-@keyframes sunglow {
-    0%   {
-        filter: brightness(1);
-        filter: contrast(1);
-        -webkit-filter: brightness(1);
-        -webkit-filter: contrast(1);
-        -webkit-filter:hue-rotate(0deg);
-    }
-    50%  {
-        filter: brightness(4);
-        filter: contrast(1.5);
-        -webkit-filter: brightness(4);
-        -webkit-filter: contrast(1.5);
-        -webkit-filter:hue-rotate(10deg);
-    }
-    100% {
-        filter: brightness(1);
-        filter: contrast(1);
-        -webkit-filter: brightness(1);
-        -webkit-filter: contrast(1);
-        -webkit-filter:hue-rotate(0deg);
-    }
+.Asteroid-Belt {
+  position: fixed;
+  z-index:1;
+  left: 41%;
 }
+.Asteroid-Belt .planet {
+  width:325px;
+  height:325px;
+  background-size: 100% 100%;
+  filter:brightness(25%);
+}
+
+.Asteroid-Belt .shadow {
+  animation: shadow 55.4s infinite linear;
+}
+
+.Kuiper-Belt {
+  position: fixed;
+  z-index:-1;
+  left: 11%;
+}
+.Kuiper-Belt .planet {
+  width:1000px;
+  height:600px;
+  background-size: 100% 100%;
+  filter:brightness(15%);
+}
+
+.Pluto {
+  position: fixed;
+  z-index:11;
+  animation: orbitpluto 300s infinite linear;
+  top: 33%;
+  left: 68%;
+}
+.Pluto .planet {
+  width:1px;
+  height:1px;
+}
+.Pluto .shadow {
+  animation: shadow 60s infinite linear;
+}
+
+.Charon {
+  position: fixed;
+  z-index:12;
+  animation: orbitpluto 300s infinite linear;
+  top: 33%;
+  left: 68%;
+}
+.Charon .planet {
+  width:1px;
+  height:1px;
+}
+.Charon .shadow {
+  animation: shadow 60s infinite linear;
+}
+
+.Kuiper-Belt .shadow {
+  animation: shadow 55.4s infinite linear;
+}
+
 @keyframes shadow {
   0% { background-position: 130% 0%; }
   33%{ background-position: 50% 0%; }
@@ -342,4 +454,12 @@ body {
   50% { z-index:-2; }
   99% { z-index:-2; }
   100%   { z-index:2; transform: rotate(360deg) translate(-269px) rotate(-360deg); }
+}
+
+@keyframes orbitpluto {
+  0% { z-index:2; transform: rotate(0deg) translate(-400px) rotate(0deg); }
+  49% { z-index:2; }
+  50% { z-index:-2; }
+  99% { z-index:-2; }
+  100%   { z-index:2; transform: rotate(360deg) translate(-400px) rotate(-360deg); }
 }

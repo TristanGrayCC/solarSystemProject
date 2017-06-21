@@ -13,22 +13,23 @@ class PlanetDetail extends React.Component {
   render(){
     const indvPlanets = this.state.planets.map((planet, index) => {
       const image = "/images/"+planet.name+".png";
+
       let divStyle = {
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
         backgroundImage: "url(" + image + ")"
       };
-      if (this.props.selectedPlanet === planet.name){
-        divStyle = {
-          height: "25px",
-          width: "50px",
-          backgroundSize: "contain",
-          backgroundImage: "url(" + image + ")"
-        }
-      }
+
+      let classN = "planet";
+      let classN2 = "running";
+
+      if (this.props.selectedPlanet === planet.name && this.props.selectedPlanet !== "Sun") {classN = "planet-selected"}
+      if (this.props.selectedPlanet === planet.name && this.props.selectedPlanet === "Sun") {classN = "sun-selected"}
+      if (this.props.selectedPlanet === planet.name && this.props.selectedPlanet === "Asteroid-Belt") {classN = "belt-selected"}
+      if (this.props.selectedPlanet === planet.name && this.props.selectedPlanet === "Kuiper-Belt") {classN = "kbelt-selected"}
+      if (this.props.pause){classN2 = "paused"}
+
       return (
-        <div key = {index} className = {planet.name}>
-          <div className="planet" style={divStyle} id = {planet.name} onClick = {this.props.showDetail}>
+        <div key = {index} className = {[classN2, planet.name].join(' ')}>
+          <div className = {classN} style={divStyle} id = {planet.name} onClick = {this.props.showDetail}>
             <div className="shadow"></div>
           </div>
         </div>
