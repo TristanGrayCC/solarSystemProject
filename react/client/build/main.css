@@ -1,6 +1,7 @@
 body {
   background-color: black;
   color: white;
+  font-family: Calibri, sans-serif;
 }
 
 .detail {
@@ -12,6 +13,14 @@ body {
   color: white;
   position: fixed;
   margin-top: 500px;
+  padding: 10px;
+}
+
+.link {
+  color: white;
+  font-style: normal;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .planet-detail {
@@ -80,7 +89,7 @@ body {
   transform-style: preserve-3d;
 }
 
-.Sol {
+.Sun {
   z-index: 1;
   height: 398px;
   top: 50%;
@@ -89,9 +98,9 @@ body {
   margin-left: -500px;
 }
 
-.Sol .planet {
-  width: 398px;
-  height: 398px;
+.Sun .planet {
+  width: 100px;
+  height: 100px;
   background-size: cover;
   border-radius: 398px;
   margin: 0 auto;
