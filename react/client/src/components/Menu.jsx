@@ -24,7 +24,7 @@ class Menu extends React.Component{
         <h2 className='title'>Menu</h2>
         <button className='planet-button' onClick = {this.props.showInfo}>Information</button>
         <br></br>
-        <a href="http://localhost:3000/#/detail" className="link">All Planets</a>
+        <a href="http://localhost:3000/#/detail" className="link">All Data</a>
         <div className="dropdown-planets">
         <button onClick={this.showPlanetList} className="dropbtn">Planets</button>
           <div className={classN}>

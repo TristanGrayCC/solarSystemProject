@@ -32,8 +32,10 @@ class Home extends React.Component{
     }
     return(
       <div className="home">
-        <h1 className='title'>The Solar System</h1>
-        <h3 className='pause' onClick = {this.pause}> Pause</h3>
+        <div className='header'>
+          <h1 className='title'>The Solar System</h1>
+          <h3 className='pause' onClick = {this.pause}> Pause</h3>
+        </div>
         <Menu showDetail = {this.showPlanetDetail} showInfo = {this.showInfo}/>
         <Planet selectedPlanet = {this.state.selectedPlanet} showDetail = {this.showPlanetDetail} pause = {this.state.pause}/>
         {planetDetails}
