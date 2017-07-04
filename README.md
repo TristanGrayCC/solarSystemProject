@@ -18,7 +18,7 @@ Install Node.js 7.5.0
 In skywalk folder:
    - rake db:create
    - rake db:seed
-   - rails server
+   - rails s -p 5000
 In react folder:
    - npm install
    - npm start
@@ -28,4 +28,3 @@ In react/client folder:
 
 In browser:
 - to use locally: http://localhost:3000/
-- API can be found at: http://localhost:3000/api/planets
